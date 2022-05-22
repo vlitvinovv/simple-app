@@ -27,4 +27,9 @@ class UserRepository extends ServiceEntityRepository implements UserRepositoryIn
     {
         return $this->find($ulid);
     }
+
+    public function findByEmail(string $email): ?User
+    {
+        return $this->findOneBy(['email' => $email]);
+    }
 }
